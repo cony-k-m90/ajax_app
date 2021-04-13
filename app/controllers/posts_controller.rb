@@ -4,8 +4,6 @@ class PostsController < ApplicationController
     @posts = Post.all.order(id: "DESC")
   end
 
-# 削除 newアクション不要のため
-
   def create
     post = Post.create(content: params[:content], checked: false)
     render json:{ post: post }
